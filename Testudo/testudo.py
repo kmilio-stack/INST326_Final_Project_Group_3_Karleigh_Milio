@@ -105,6 +105,24 @@ def display_board(board, testudo_pos, jumps_left):
     print(f"Jumps left: {jumps_left}")
 
 def move_testudo(board, current_pos, move, jumps_left):
+    """
+Handles player movement and jump logic.
+
+Args:
+    board (list): game board
+    current_pos (tuple): current position
+    move (str): player input
+    jumps_left (int): remaining jumps
+
+Returns:
+    tuple: updated position and jumps left
+
+Author:
+    Milio
+
+Techniques:
+    conditional expressions
+"""
 
     row, col = current_pos      
     

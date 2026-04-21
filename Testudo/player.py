@@ -49,7 +49,7 @@ Techniques:
         else:
             print("Invalid jump format. Use 'j row col'")
     else:
-        print("No jumps left" if jumps_left == 0 else "")
+        print("No jumps left" if jumps_left == 0 else "") 
         
        
     return current_pos, jumps_left

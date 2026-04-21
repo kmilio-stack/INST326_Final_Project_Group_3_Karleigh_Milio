@@ -6,7 +6,7 @@ This is a text-based Python game where the player controls Testudo (The UMD masc
 ## How the Game Works
 - The player moves using WASD controls
 - The board shifts each turn based on row speeds
-- The goal is to reach the bottom row without hitting obstacles
+- The goal is to reach the end without hitting obstacles
 
 ## Files in Repo
 - testudo.py

@@ -3,7 +3,7 @@
 import os
 
 # Constants
-Testudo = '\U0001F438' 
+Testudo = '\U0001F422' 
 empty_space = '_'
 safe = ' '
 

@@ -71,7 +71,7 @@ def rotate_board(board, speeds):
     return rotated_board
 
 def check_collision(board, testudo_pos):
-    #check for colisions against cars
+    #check for colisions against obstacles
     row, col = testudo_pos
     return board[row][col] != empty_space and board[row][col] != safe
 
@@ -84,7 +84,7 @@ def display_board(board, testudo_pos, jumps_left):
             new_row.append(item) 
         display_board.append(new_row)
     
-    # Place the testudo
+    # Place the testudo character on the display board
     testudo_row, testudo_col = testudo_pos
     display_board[testudo_row][testudo_col] = Testudo
     
@@ -106,7 +106,7 @@ def display_board(board, testudo_pos, jumps_left):
 
 def move_testudo(board, current_pos, move, jumps_left):
 
-    row, col = current_pos      
+    row, col = current_pos
     
     # Movement commands
     if move.lower() == 'w' and row > 0:
@@ -150,7 +150,7 @@ def testudo_game(game_file):
     # Load game configuration
     rows, cols, jumps, speeds, board = load_game_file(game_file)
     
-    # Initial testudo position (one row above the cars)
+    # Initial testudo position (one row above the obstacles)
     safe_row = [list(safe * cols)]  
     board = safe_row + board  
     speeds = [0] + speeds     

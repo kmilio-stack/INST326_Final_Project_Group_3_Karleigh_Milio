@@ -1,12 +1,15 @@
 
 
+
+
+
 import os
 
 # Constants
 Testudo = '\U0001F438' 
 empty_space = '_'
 safe = ' '
-
+veo = 'X'
 
 def select_game_file():
     # Use os.walk to get files
@@ -71,9 +74,10 @@ def rotate_board(board, speeds):
     return rotated_board
 
 def check_collision(board, testudo_pos):
-    #check for colisions against cars
     row, col = testudo_pos
-    return board[row][col] != empty_space and board[row][col] != safe
+    if 0 <= row < len(board) and 0 <= col < len(board[0]):
+        return board[row][col] == empty_space
+    return True
 
 def display_board(board, testudo_pos, jumps_left):
     
@@ -106,7 +110,7 @@ def display_board(board, testudo_pos, jumps_left):
 
 def move_testudo(board, current_pos, move, jumps_left):
 
-    row, col = current_pos      
+    row, col = current_pos
     
     # Movement commands
     if move.lower() == 'w' and row > 0:
@@ -144,13 +148,21 @@ def move_testudo(board, current_pos, move, jumps_left):
     
     return current_pos, jumps_left
 
+def move_with_veo(board, testudo_pos, speeds):
+    row, col = testudo_pos
+    if board[row][col] == veo:
+        veo_speed = speeds[row]
+        col = (col + veo_speed) % len(board[row]) 
+        return (row, col)
+    return testudo_pos
+
 def testudo_game(game_file):
     status = False
 
     # Load game configuration
     rows, cols, jumps, speeds, board = load_game_file(game_file)
     
-    # Initial testudo position (one row above the cars)
+    # Initial testudo position (one row above the obstacles)
     safe_row = [list(safe * cols)]  
     board = safe_row + board  
     speeds = [0] + speeds     
@@ -174,12 +186,6 @@ def testudo_game(game_file):
             print("You won, Testudo made it to his exam!")
             status = True
             
-        
-        # Check for collision with obstacle
-        if check_collision(board, testudo_pos):
-            print("You Lost, Sorry Testudo")
-            status = True
-            
         # Get user move
         move = input("WASDJ >> ")
         
@@ -188,16 +194,21 @@ def testudo_game(game_file):
         
         # Move the testudo
         testudo_pos, jumps = move_testudo(board, testudo_pos, move, jumps)
+
         
         # Rotate the board
         board = rotate_board(board, speeds)
+
+        # If the testudo didn't move, shift it with the veo
+        if testudo_pos == prev_pos:
+            testudo_pos = move_with_veo(board, testudo_pos, speeds)
         
         # Check for collision after rotation
         if check_collision(board, testudo_pos):
+            display_board(board, testudo_pos, jumps)
             print("You Lost, Sorry Testudo")
             status = True
-            
-            
+              
         turn_count += 1
 
 if __name__ == '__main__':

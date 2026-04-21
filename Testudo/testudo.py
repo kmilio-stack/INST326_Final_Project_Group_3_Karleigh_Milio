@@ -123,25 +123,23 @@ def move_testudo(board, current_pos, move, jumps_left):
     
     elif move.lower().startswith('j'):
         if jumps_left > 0:
-            # Split the input to get coordinates
             parts = move.split()
             if len(parts) == 3:
                 target_row = int(parts[1])
                 target_col = int(parts[2])
-                
-                # Check if jump is valid (one row distance)
-                if (abs(target_row - row) <= 1 and 
-                    0 <= target_row < len(board) and 
-                    0 <= target_col < len(board[0])):
-                    return (target_row, target_col), jumps_left - 1
-                else:
-                    print("Invalid jump location. Must be within one row.")
+            
+            if (abs(target_row - row) <= 1 and 
+                0 <= target_row < len(board) and 
+                0 <= target_col < len(board[0])):
+                return (target_row, target_col), jumps_left - 1
             else:
-                print("Invalid jump format. Use 'j row col'")
-
+                print("Invalid jump location. Must be within one row.")
         else:
-            print("No jumps left")
-    
+            print("Invalid jump format. Use 'j row col'")
+    else:
+        print("No jumps left" if jumps_left == 0 else "")
+        
+       
     return current_pos, jumps_left
 
 def testudo_game(game_file):

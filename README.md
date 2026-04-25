@@ -9,4 +9,7 @@ This is a text-based Python game where the player controls Testudo (The UMD masc
 - The goal is to reach the end without hitting obstacles
 
 ## Files in Repo
-- testudo.py
+- board.py
+- player.py
+- game.py
+- 

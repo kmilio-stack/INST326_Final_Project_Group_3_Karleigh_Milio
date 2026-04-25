@@ -20,7 +20,7 @@ def rotate_board(board, speeds):
     rotated_board = []
     for i in range(len(board)):
         row = board[i]
-        speed = speeds[i]
+        speed = speeds[i] % len(row)
         rotated_row = row[-speed:] + row[:-speed]
         rotated_board.append(rotated_row)
     
@@ -35,17 +35,17 @@ def check_collision(board, testudo_pos):
         testudo_pos (tuple): (row, col) position
     
     Returns:
-        bool: True if collision occurs otherwise false.
+        bool: True if a collision occurs otherwise false.
     
     Author:
         Brevard
     """
     row, col = testudo_pos
-    return board[row][col] != EMPTY_SPACE and board [row][col] != SAFE
+    return board[row][col] != EMPTY_SPACE and board[row][col] != SAFE
 
 def display_board(board, testudo_pos, jumps_left):
     """
-    Displays the baord with the player position
+    Displays the board with the player position
     
     Args:
         board (list): 2D game board
@@ -58,15 +58,15 @@ def display_board(board, testudo_pos, jumps_left):
     Author:
         Brevard
     """
-    display_board = []
+    temp_board = []
     for row in board:
         new_row = []
         for item in row:
             new_row.append(item)
-        display_board.append(new_row)
+        temp_board.append(new_row)
     
     testudo_row, testudo_col = testudo_pos
-    display_board[testudo_row][testudo_col] = TESTUDO
+    temp_board[testudo_row][testudo_col] = TESTUDO
     
     print(" ", end= " ")
     for i in range(len(board[0])):
@@ -74,12 +74,9 @@ def display_board(board, testudo_pos, jumps_left):
     print()
     
     row_index = 0
-    for row in display_board:
+    for row in temp_board:
         print(f"{row_index:2}", end=" ")
         print("".join(row))
         row_index +=1
-    
-    print(f"Jumps left: {jumps_left}")
-    
-    
         
+    print(f"Jumps left: {jumps_left}")

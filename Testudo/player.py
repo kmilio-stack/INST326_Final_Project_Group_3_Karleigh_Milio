@@ -12,7 +12,7 @@ class Player:
             jumps_left (int): number of jumps the player starts with
             
         Author: Karleigh
-        Technique claimed: 
+        
         """
         self.name = name
         self.jumps_left = jumps_left
@@ -69,6 +69,9 @@ class Player:
             
         Returns:
             None
+            
+        Author: Karleigh
+        Technique claimed Conditional expression
         """
         if self.jumps_left <= 0:
             print("No jumps left")
@@ -102,6 +105,7 @@ class Player:
             self.jumps_left -= 1
             
         else:
-            print("Invalid jump location. Must be within one row.")
-    
-
+            reason = "off the board" if not (valid_row and valid_col) else "too far away"
+            
+            print(f"Invalid jump location: {reason}.")
+                  

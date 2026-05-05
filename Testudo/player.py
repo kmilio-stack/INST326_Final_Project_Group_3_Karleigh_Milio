@@ -46,13 +46,13 @@ class Player:
         if move_choice == "w" and self.row > 0:
             self.row -= 1
             
-        elif move_choice == "s" and self.row < len(board) - 1:
+        elif move_choice == "s" and self.row < len(board.grid) - 1:
             self.row += 1
             
         elif move_choice == "a" and self.col > 0:
             self.col -= 1
             
-        elif move_choice == "d" and self.col < len(board[0]) - 1:
+        elif move_choice == "d" and self.col < len(board.grid[0]) - 1:
             self.col += 1
         
         elif move_choice.startswith("j"):

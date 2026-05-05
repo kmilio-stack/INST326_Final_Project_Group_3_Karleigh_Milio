@@ -1,4 +1,7 @@
 import os
+from board import Board, SAFE
+from player import Player
+
 
 class TestudoGame:
     def __init__(self):
@@ -8,7 +11,7 @@ class TestudoGame:
         self.jumps = 0
         self.speeds = []
         self.board = []
-        self.testudo_pos = (0, 0)
+        self.player = (0, 0)
         self.turn_count = 1
         self.dead = False
 
@@ -68,27 +71,31 @@ class TestudoGame:
             
             # Read speeds
             speeds_line = file.readline().strip().split()
-            speeds = []
+            self.speeds = []
             for speed in speeds_line:
-                speeds.append(int(speed))
+                self.speeds.append(int(speed))
             
             # Read board
-            self.board = [list(file.readline().strip()) for _ in range(rows)]
+            self.board = [list(file.readline().strip()) for _ in range(self.rows)]
 
     def setup_game(self):
         """Sets up the initial game board, including safe zones and starting position"""
         
-        # Initial testudo position (one row above the cars)
-        safe_row = [list(safe * self.cols)]
+        # Initial testudo position (one row above the obstacles)
+        safe_row = [list(SAFE * self.cols)]
         self.board = safe_row + self.board
         self.speeds = [0] + self.speeds
-        self.testudo_pos = (0, self.cols // 2)
      
         #create a safe row at the end which is the win condition
-        safe_row_bottom = [list(safe * self.cols)]
+        safe_row_bottom = [list(SAFE * self.cols)]
         self.board.append(safe_row_bottom[0])
         self.speeds.append(0)  
         
+        # convert list to Board object
+        self.board = Board(self.board, self.speeds)
+        
+        #create player object
+        self.player = Player(0, self.cols // 2, jumps_left=self.jumps)
         
         
     def run(self): 
@@ -97,31 +104,49 @@ class TestudoGame:
         while not self.dead:
             print(f"\nTurn {self.turn_count}")
             # Display the board
-            display_board(self.board, self.testudo_pos, self.jumps)
+            self.board.display(self.player.get_position(),
+                               self.player.jumps_left)
             
             # Check for win condition (reached the bottom)
-            if self.testudo_pos[0] == len(self.board) - 1:
+            if self.player.row == len(self.board.grid) - 1:
                 print("You won, Testudo lives to cross another day!")
                 self.dead = True
+                return
                 
-            
             # Check for collision
-            if check_collision(self.board, self.testudo_pos):
+            if self.board.check_collision(self.player.get_position()):
                 print("You Lost, Sorry Testudo")
                 self.dead = True
-                
-            # Get user move
-            move = input("WASDJ >> ")
+                return 
             
-            # Update Testudo's position and remaining jumps based on player move
-            self.testudo_pos, self.jumps = move_testudo( self.board, self.testudo_pos, move, self.jumps)
-  
+            # Get user move
+            move_choice = input("WASD or j row col >> ")
+             
+            # move the player based on user input 
+            self.player.move(self.board, move_choice)
+            
+           # Check collision after move
+            if self.board.check_collision(
+                self.player.get_position()):
+                print("You Lost, Sorry Testudo")
+                self.dead = True
+                return
+           
             # Rotate the board
-            self.board = rotate_board(self.board, self.speeds)
+            self.board.rotate()
             
             # Check for collision after rotation
-            if check_collision(self.board, self.testudo_pos):
+            if self.board.check_collision(self.player.get_position()):
                 print("You Lost, Sorry Testudo")
                 self.dead = True
                   
             self.turn_count += 1
+            
+if __name__ == "__main__":
+    game = TestudoGame()
+    filename = game.select_game_file()
+    
+    if filename is not None:
+        game.load_game_file(filename)
+        game.setup_game()
+        game.run()

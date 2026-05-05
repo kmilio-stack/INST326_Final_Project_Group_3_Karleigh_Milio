@@ -11,7 +11,7 @@ class Player:
             name (str): player name
             jumps_left (int): number of jumps the player starts with
             
-        Author: Karleigh
+        Author: Milio
         
         """
         self.name = name
@@ -24,7 +24,7 @@ class Player:
         Returns:
             tuple: (row, col) position of the player
         
-        Author: Karleigh
+        Author: Milio
         """
         return (self.row, self.col)
     
@@ -38,7 +38,7 @@ class Player:
         Returns:
             None
         
-        Author: Karleigh
+        Author: Milio
         Technique claimed: sequence unpacking
         """
         move_choice = move_choice.lower().strip()
@@ -70,8 +70,8 @@ class Player:
         Returns:
             None
             
-        Author: Karleigh
-        Technique claimed Conditional expression
+        Author: Milio
+        Technique claimed: Conditional expression
         """
         if self.jumps_left <= 0:
             print("No jumps left")

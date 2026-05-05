@@ -39,7 +39,7 @@ class Player:
             None
         
         Author: Karleigh
-        Technique claimed: conditional expressions
+        Technique claimed: sequence unpacking
         """
         move_choice = move_choice.lower().strip()
         

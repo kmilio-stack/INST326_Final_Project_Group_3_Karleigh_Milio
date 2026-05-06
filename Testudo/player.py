@@ -2,7 +2,7 @@ class Player:
     """ represents the player character in the game.
     stores the score, jumps remaining, and current position of the player."""
     
-    def __init__(self, start_row, start_col, name="Testudo", jumps_left=3):
+    def __init__(self, start_row, start_col, name="Testudo", jumps_left=0):
         """ Initializes a player object
         
         Args:

@@ -21,7 +21,7 @@ class Board:
         
     def rotate(self):
         """
-        Rotates each row of the board based on it speed.
+        Rotates each row of the board based on its speed.
         
         Returns:
             list: rotated board
@@ -33,6 +33,11 @@ class Board:
         
         for i in range(len(self.grid)):
             row = self.grid[i]
+            
+            if len(row) == 0:
+                rotated.append(row)
+                continue
+            
             speed = self.speeds[i] % len(row)
             
             rotated_row = row[-speed:] + row[:-speed]
@@ -55,7 +60,7 @@ class Board:
             Brevard
         """
         row, col = testudo_pos
-        return self.grid[row][col] != EMPTY_SPACE and self.grid[row][col] != SAFE
+        return self.grid[row][col] not in {EMPTY_SPACE, SAFE}
     
     def display(self, testudo_pos, jumps_left):
         """
@@ -70,20 +75,24 @@ class Board:
         
         Author:
             Brevard
+        
+        Technique:
+            Comprehensions and generator expressions
         """
+        if not self.grid:
+            print("Empty Board")
+            return
         
         temp_board = [row[:] for row in self.grid]
         
         row, col = testudo_pos
         temp_board[row][col] = TESTUDO
         
-        print("  ", end= "")
-        for i in range(len(self.grid[0])):
-            print(f"{i:2}", end="")
-        print()
+        header = "  " + "".join(f"{i:2}" for i in range(len(self.grid[0])))
+        print(header)
         
         for i, row in enumerate(temp_board):
             print(f"{i:2} " + "".join(row))
-                  
+        
         print(f"Jumps left: {jumps_left}")
 

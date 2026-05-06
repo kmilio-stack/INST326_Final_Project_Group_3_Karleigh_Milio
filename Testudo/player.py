@@ -96,9 +96,8 @@ class Player:
         valid_col = 0 <= target_col < len(board.grid[0])
         
         close_enough = (
-            abs(target_row - self.row) <= 1 and 
-            abs(target_col - self.col) <= 1
-        )
+            abs(target_row - self.row) <= 1)
+        
         if valid_row and valid_col and close_enough:    
             self.row = target_row
             self.col = target_col

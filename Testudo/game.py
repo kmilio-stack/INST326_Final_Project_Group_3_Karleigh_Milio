@@ -103,6 +103,13 @@ class TestudoGame:
         
         while not self.dead:
             print(f"\nTurn {self.turn_count}")
+            
+            # Rotate the board
+            self.board.rotate()
+            if self.turn_count > 1:
+                self.board.rotate()
+
+            
             # Display the board
             self.board.display(self.player.get_position(),
                                self.player.jumps_left)
@@ -126,16 +133,6 @@ class TestudoGame:
             self.player.move(self.board, move_choice)
             
            # Check collision after move
-            if self.board.check_collision(
-                self.player.get_position()):
-                print("You Lost, Sorry Testudo")
-                self.dead = True
-                return
-           
-            # Rotate the board
-            self.board.rotate()
-            
-            # Check for collision after rotation
             if self.board.check_collision(self.player.get_position()):
                 print("You Lost, Sorry Testudo")
                 self.dead = True

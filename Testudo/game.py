@@ -25,7 +25,7 @@ class TestudoGame:
         root, directories, files = next(os.walk('.'))
         
         # Filter for .testudo files
-        testudo_files = [file for file in files if file.endswith('.testudo')]
+        testudo_files = sorted([file for file in files if file.endswith('.testudo')])
         
         # Print available files with numbered list
         index = 1  

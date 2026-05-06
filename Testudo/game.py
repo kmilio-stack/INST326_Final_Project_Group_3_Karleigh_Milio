@@ -139,7 +139,8 @@ class TestudoGame:
             if self.board.check_collision(self.player.get_position()):
                 print("You Lost, Sorry Testudo")
                 self.dead = True
-                  
+                return
+            
             self.turn_count += 1
             
 if __name__ == "__main__":

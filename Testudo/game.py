@@ -5,7 +5,9 @@ from player import Player
 
 class TestudoGame:
     def __init__(self):
-        """Initializes TestudoGame object with game state values"""
+        """Initializes TestudoGame object with game state values
+        Author: Basil
+            """
         self.rows = 0
         self.cols = 0
         self.jumps = 0
@@ -21,6 +23,8 @@ class TestudoGame:
 
             Returns:
                 str: Selected filename
+            
+            Author: Basil
         """
         root, directories, files = next(os.walk('.'))
         
@@ -60,6 +64,8 @@ class TestudoGame:
 
             Returns:
                 self.rows, self.cols, self.jumps, self.speeds, self.board
+                
+            Author: Basil
         """
 
         with open(filename, 'r') as file:
@@ -79,7 +85,10 @@ class TestudoGame:
             self.board = [list(file.readline().strip()) for _ in range(self.rows)]
 
     def setup_game(self):
-        """Sets up the initial game board, including safe zones and starting position"""
+        """Sets up the initial game board, including safe zones and starting position
+        
+        Author: Basil
+        """
         
         # Initial testudo position (one row above the obstacles)
         safe_row = [list(SAFE * self.cols)]
@@ -99,7 +108,10 @@ class TestudoGame:
         
         
     def run(self): 
-        """Runs the main game loop until the player wins or loses."""
+        """Runs the main game loop until the player wins or loses.
+        
+        Author: Basil
+        """
         
         while not self.dead:
             print(f"\nTurn {self.turn_count}")

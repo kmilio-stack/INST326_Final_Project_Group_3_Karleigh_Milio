@@ -13,6 +13,8 @@ class Player:
             
         Author: Milio
         
+        Techniques Claimed: optional parameter/keyword arguments
+        
         """
         self.name = name
         self.jumps_left = jumps_left
@@ -39,7 +41,7 @@ class Player:
             None
         
         Author: Milio
-        Technique claimed: sequence unpacking
+        
         """
         move_choice = move_choice.lower().strip()
         
@@ -71,7 +73,7 @@ class Player:
             None
             
         Author: Milio
-        Technique claimed: Conditional expression
+        Technique claimed: Sequence Unpacking, Conditional expressions
         """
         if self.jumps_left <= 0:
             print("No jumps left")

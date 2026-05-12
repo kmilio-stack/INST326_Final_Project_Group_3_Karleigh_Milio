@@ -20,6 +20,7 @@ This is a text-based Python game where the player controls Testudo (The UMD masc
 
 ## Attribution Table
 | Method/Function | Primary Author | Technique Claimed |
-| --------------- | -------------- | ----------------- |
-| Row 1, Col 1    | Row 1, Col 2   | Row 1, Col 3      |
-| Row 2, Col 1    | Row 2, Col 2   |     Row 2, Col 3 |
+| --------------- | -------------- | ------------------|
+| __init__()      | Karleigh Milio |optional parameters|
+| jump()          | Karleigh Milio | sequence unpacking|
+|

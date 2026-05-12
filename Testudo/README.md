@@ -16,13 +16,15 @@ This is a text-based Python game where the player controls Testudo (The UMD masc
 - game1.testudo
 - game2.testudo
 - game3.testudo
+- README.md
+
 
 
 ## Attribution Table
 | Method/Function | Primary Author |   Technique Claimed   |
 | --------------- | -------------- | ----------------------|
-| __init__()      | Karleigh Milio | 2. optional parameters|
-| jump()          | Karleigh Milio | 6. sequence unpacking |
+|    __init__()   | Karleigh Milio | 2. optional parameters|
+|     jump()      | Karleigh Milio | 6. sequence unpacking |
 |
 
 ## Annotated Bibliography

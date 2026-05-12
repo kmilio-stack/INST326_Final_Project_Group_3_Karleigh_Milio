@@ -25,4 +25,23 @@ This is a text-based Python game where the player controls Testudo (The UMD masc
 | jump()          | Karleigh Milio | 6. sequence unpacking |
 |
 
-## Sources
+## Annotated Bibliography
+
+1.
+Game Loop · Sequencing Patterns · Game Programming Patterns. (2014). 
+    Gameprogrammingpatterns.com. https://gameprogrammingpatterns.com/game-loop.html
+
+We used this source to research Game Loops, which allowed us to write  the
+initial set up of the game in a proper technique. This source explains how 
+a game loop processes user input without blocking, updates the game state, 
+and renders the game continuously, which was utilized in the game.py file.
+
+2.
+Architecture, Performance, and Games · Introduction · Game Programming Patterns. 
+(n.d.). Gameprogrammingpatterns.com. https://gameprogrammingpatterns.com/architecture-performance-and-games.html
+
+We used this source to fully understand how software architects can utilize 
+python in order to build a playable game using the terminal. It also helped us 
+recognize when our code was confusing, and would be difficult to update if 
+it remained in that format. This source made us realize that simplicity is best, 
+for our sakes while initially writing, and especially so in the debugging process. 

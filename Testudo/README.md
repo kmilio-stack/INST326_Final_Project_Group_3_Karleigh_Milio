@@ -57,7 +57,7 @@ Enter one of the following at the WASD or j row col >> prompt:
 |d |Move right one column|
 |j row col| Jump to a specific position (e.g. j 3 5)| 
 
-- 
+
 
 ## Files in Repo
 - board.py (used for creating the game board, controlling the movement of obstacles)
@@ -77,6 +77,9 @@ Enter one of the following at the WASD or j row col >> prompt:
 |     Player.jump()      | Karleigh Milio | 6. Sequence Unpacking |
 |TestudoGame.select_game_file() | Basil Nadeem | 4. With Statement |
 |TestudoGame.load_game_file()| Basil Nadeem | 9. Key Function |
+| Board.display() | Joel Brevard | 3. F-strings containing expressions; 8. comprehensions and/or generator expressions |
+| Board.rotate() | Joel Brevard | N/A |
+| Board.check_collision() | Joel Brevard | N/A | 
 
 ## Annotated Bibliography
 

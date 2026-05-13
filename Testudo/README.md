@@ -4,13 +4,22 @@
 This is a text-based Python game where the player controls Testudo (The UMD mascot) and attempts to safely cross a moving board to reach the goal, his exam location. The player must avoid obstacles, use jumps strategically, and make decisions each turn to survive and win.
 
 ## How the Game Works
-- The player moves using WASD controls
+- The player moves using WASD controls when prompted in the terminal
 - The board shifts each turn based on row speeds
 - The player can jump using the "j row col" command
 - The goal is to reach the bottom row without hitting obstacles
 
+## How To Run Game From Command Line
+
+- 
+- 
+
+## How To Use Program
+
+- 
+
 ## Files in Repo
-- board.py
+- board.py (used for creating the game board, controlling the movement of obstacles)
 - player.py
 - game.py
 - game1.testudo

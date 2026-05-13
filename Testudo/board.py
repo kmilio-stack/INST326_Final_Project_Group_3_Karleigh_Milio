@@ -76,8 +76,8 @@ class Board:
         Author:
             Brevard
         
-        Technique:
-            Comprehensions and generator expressions
+        Techniques Claimed:
+             F-strings containing expressions; comprehensions and generator expressions
         """
         if not self.grid:
             print("Empty Board")

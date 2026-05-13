@@ -18,7 +18,7 @@ Turn 1
     - moving obstacle characters = dangerous spaces
     - the top row = starting safe row
     - the bottom row = winning safe row
-    - The player begins in the top safe row and must move downward to reach 
+- The player begins in the top safe row and must move downward to reach 
 the bottom safe row.
 
 ## How To Run Game From Command Line

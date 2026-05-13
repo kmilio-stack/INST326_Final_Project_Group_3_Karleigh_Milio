@@ -13,12 +13,12 @@ This is a text-based Python game where the player controls Testudo (The UMD masc
 - Each turn, the game prints the board and the current turn number:
 Turn 1
 - The board contains:
-🐢 (Testudo) = the player
-_ = empty safe space
-moving obstacle characters = dangerous spaces
-the top row = starting safe row
-the bottom row = winning safe row
-The player begins in the top safe row and must move downward to reach 
+    - 🐢 (Testudo) = the player
+    - _ = empty safe space
+    - moving obstacle characters = dangerous spaces
+    - the top row = starting safe row
+    - the bottom row = winning safe row
+    - The player begins in the top safe row and must move downward to reach 
 the bottom safe row.
 
 ## How To Run Game From Command Line

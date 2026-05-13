@@ -55,6 +55,7 @@ Enter one of the following at the WASD or j row col >> prompt:
 |a | Move left one column|
 |d |Move right one column|
 |j row col| Jump to a specific position (e.g. j 3 5)| 
+
 - 
 
 ## Files in Repo

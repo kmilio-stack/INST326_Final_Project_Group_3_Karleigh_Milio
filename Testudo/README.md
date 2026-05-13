@@ -73,10 +73,10 @@ Enter one of the following at the WASD or j row col >> prompt:
 ## Attribution Table
 | Method/Function | Primary Author |   Technique Claimed   |
 | --------------- | -------------- | ----------------------|
-|    __init__()   | Karleigh Milio | 2. Optional Parameters|
-|     jump()      | Karleigh Milio | 6. Sequence Unpacking |
-|select_game_file() | Basil Nadeem | 4. With Statement |
-|load_game_file()| Basil Nadeem | 9. Key Function |
+|    Player.__init__()   | Karleigh Milio | 2. Optional Parameters|
+|     Player.jump()      | Karleigh Milio | 6. Sequence Unpacking |
+|TestudoGame.select_game_file() | Basil Nadeem | 4. With Statement |
+|TestudoGame.load_game_file()| Basil Nadeem | 9. Key Function |
 
 ## Annotated Bibliography
 

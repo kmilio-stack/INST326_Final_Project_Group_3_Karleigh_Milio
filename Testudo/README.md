@@ -47,7 +47,14 @@ row and column numbers would replace "row" and "col"
 
 
 ## How To Use Program
-
+Movement Controls
+Enter one of the following at the WASD or j row col >> prompt:
+|Input|Action|
+|w| Move up one row|
+|s| Move down one row|
+|a | Move left one column|
+|d |Move right one column|
+|j row col| Jump to a specific position (e.g. j 3 5)| 
 - 
 
 ## Files in Repo

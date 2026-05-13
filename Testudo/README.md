@@ -64,9 +64,10 @@ row and column numbers would replace "row" and "col"
 ## Attribution Table
 | Method/Function | Primary Author |   Technique Claimed   |
 | --------------- | -------------- | ----------------------|
-|    __init__()   | Karleigh Milio | 2. optional parameters|
-|     jump()      | Karleigh Milio | 6. sequence unpacking |
-|
+|    __init__()   | Karleigh Milio | 2. Optional Parameters|
+|     jump()      | Karleigh Milio | 6. Sequence Unpacking |
+|select_game_file() | Basil Nadeem | 4. With Statement |
+|load_game_file()| Basil Nadeem | 9. Key Function |
 
 ## Annotated Bibliography
 

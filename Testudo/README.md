@@ -11,8 +11,28 @@ This is a text-based Python game where the player controls Testudo (The UMD masc
 
 ## How To Run Game From Command Line
 
-- 
-- 
+- Open terminal
+- Navigiate to the folder files are saved to using "cd~/...."
+- Once inside correct folder, type "python3 game.py"
+- When available .testudo game files are returned in the terminal, the user can choose which level using 1, 2, or 3, depending on difficulty they want to play.
+- The game then asks for user move input, "WASD or j row col >>"
+- User inputs location they want to move to for their turn, using WASD, 
+or they can choose to use 1 jump by typing "j row col" in terminal, where desired 
+row and column numbers would replace "row" and "col"
+- Example of full gameplay terminal inputs: 
+
+    cd ~/INST326_Final_Project_Group_3_Karleigh_Milio/Testudo
+
+    python3 game.py
+
+    1
+    d
+    d
+    s
+    j 3 4
+    w
+
+
 
 ## How To Use Program
 

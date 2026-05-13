@@ -50,6 +50,7 @@ row and column numbers would replace "row" and "col"
 Movement Controls
 Enter one of the following at the WASD or j row col >> prompt:
 |Input|Action|
+|-----|------|
 |w| Move up one row|
 |s| Move down one row|
 |a | Move left one column|

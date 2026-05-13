@@ -41,7 +41,7 @@ row and column numbers would replace "row" and "col"
     d
     d
     s
-    j 3 4
+    (j 3 4)
     w
 
 
@@ -52,11 +52,11 @@ row and column numbers would replace "row" and "col"
 
 ## Files in Repo
 - board.py (used for creating the game board, controlling the movement of obstacles)
-- player.py
-- game.py
-- game1.testudo
-- game2.testudo
-- game3.testudo
+- player.py (Controls player inputs, like movement and jumps. checking if input is allowed)
+- game.py (Selects and loads game files as well as sets up and runs the game)
+- game1.testudo (game file)
+- game2.testudo (game file)
+- game3.testudo (game file)
 - README.md
 
 

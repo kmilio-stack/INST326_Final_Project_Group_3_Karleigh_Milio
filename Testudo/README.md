@@ -31,7 +31,7 @@ the bottom safe row.
 - User inputs location they want to move to for their turn, using WASD, 
 or they can choose to use 1 jump by typing "j row col" in terminal, where desired 
 row and column numbers would replace "row" and "col"
-- Example of full gameplay terminal inputs: 
+- Example of a full winning gameplay terminal inputs: 
 
     cd ~/INST326_Final_Project_Group_3_Karleigh_Milio/Testudo
 
